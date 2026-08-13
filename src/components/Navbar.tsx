@@ -43,9 +43,6 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-        <a href="#contact" onClick={() => setOpen(false)}>
-          Contact
-        </a>
       </div>
     </nav>
   );
