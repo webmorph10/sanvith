@@ -1333,6 +1333,17 @@ button, a {
   text-decoration: none;
   color: var(--text);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.contact-cta:active {
+  transform: translateY(0px);
 }
 
 .contact-cta:hover {
@@ -1341,7 +1352,7 @@ button, a {
 }
 
 .contact-cta.primary {
-  background: linear-gradient(135deg, rgba(122,245,235,0.28), rgba(143,167,255,0.18));
+  background: linear-gradient(135deg, rgba(122,245,235,0.28), rgba(143,167,255,0.18)) !important;
   color: #0b1119;
   font-weight: 600;
   box-shadow: 0 20px 38px -28px rgba(122,245,235,0.9);

@@ -1,15 +1,8 @@
 import { personal } from "../data";
 
 export default function Contact() {
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(personal.email);
-      const notice = document.getElementById("copiedNotice");
-      notice?.classList.add("show");
-      setTimeout(() => notice?.classList.remove("show"), 1800);
-    } catch {
-      window.location.href = `mailto:${personal.email}`;
-    }
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${personal.email}`;
   };
 
   return (
@@ -27,7 +20,7 @@ export default function Contact() {
           </p>
 
           <div className="cta-row">
-            <button className="contact-cta primary" id="copyEmail" onClick={copyEmail}>
+            <button type="button" className="contact-cta primary" onClick={handleEmailClick}>
               <span className="cta-icon">✉</span>
               <span>{personal.email}</span>
               <span className="cta-arrow">↗</span>
@@ -67,7 +60,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="copied" id="copiedNotice">Email copied to clipboard.</div>
       <footer>
         Designed and built with{' '}
         <a href="https://webmorph-studio-psi.vercel.app/" target="_blank" rel="noreferrer">
